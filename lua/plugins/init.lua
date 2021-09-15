@@ -349,4 +349,26 @@ return packer.startup(function()
       end,
    }
 
+   use {
+     "vimwiki/vimwiki",
+     config = function()
+       vim.g.vimwiki_global_ext = 0
+       vim.g.vimwiki_markdown_link_ext = 1
+       vim.g.vimwiki_list = {
+           {
+               auto_export =  1,
+               path = vim.env.HOME .. '/Documents/Wiki/src/',
+               path_html = vim.env.HOME .. '/Documents/Wiki/html/',
+               syntax = 'markdown',
+               ext = '.md',
+               custom_wiki2html = vim.env.HOME .. '/.local/bin/wiki2html.sh',
+               template_path = vim.env.HOME .. '/.local/share/pandoc/templates/',
+               template_default = 'GitHub',
+               template_ext = '.html5',
+               links_space_char = '_',
+           }
+       }
+     end
+   }
+
 end)
