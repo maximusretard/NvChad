@@ -370,5 +370,13 @@ return packer.startup(function()
        }
      end
    }
+   
+   use {
+     "tools-life/taskwiki",
+     config = function()
+       vim.g.taskwiki_markup_syntax = 'markdown'
+       vim.g.markdown_folding = 1
+     end
+   }
 
 end)
